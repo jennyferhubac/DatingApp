@@ -24,8 +24,8 @@ export class NavComponent implements OnInit {
   login()
   {
     this.accountService.login(this.model).subscribe({
-      next: _ => this.router.navigateByUrl('/members'), //no argument and one liner ...if no argument can do _ or ()
-      error: error => this.toastr.error(error.error)
+      //error removed because Error interceptor has been created
+      next: _ => this.router.navigateByUrl('/members')//, //no argument and one liner ...if no argument can do _ or () //error: error => this.toastr.error(error.error)
     })
   }
   logout(){
